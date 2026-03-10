@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess: Grandmaster Edition</title>
+    <link rel="stylesheet" href="stylechess.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <header>
+            <h1>CHESS<span>PRO</span></h1>
+        </header>
+
+        <main class="game-area">
+            <aside class="side-panel left">
+                <div class="player-card" id="player-black">
+                    <div class="avatar">B</div>
+                    <div class="player-info">
+                        <span class="name">Black Player</span>
+                        <div id="black-captured" class="captures"></div>
+                    </div>
+                </div>
+                <div class="game-stats">
+                    <div class="stat-item">Turn: <span id="current-turn">White</span></div>
+                    <div id="check-warning" class="check-alert">CHECK!</div>
+                </div>
+                <button id="restart-btn">New Match</button>
+            </aside>
+
+            <div class="board-container">
+                <div id="chessboard"></div>
+            </div>
+
+            <aside class="side-panel right">
+                <div class="player-card" id="player-white">
+                    <div class="avatar">W</div>
+                    <div class="player-info">
+                        <span class="name">White Player</span>
+                        <div id="white-captured" class="captures"></div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <div id="promotion-modal" class="modal">
+        <div class="modal-content">
+            <h3>Pawn Promotion</h3>
+            <div class="promotion-options">
+                <div class="promo-choice" onclick="selectPromotion('Q')"><span>Queen</span></div>
+                <div class="promo-choice" onclick="selectPromotion('R')"><span>Rook</span></div>
+                <div class="promo-choice" onclick="selectPromotion('B')"><span>Bishop</span></div>
+                <div class="promo-choice" onclick="selectPromotion('N')"><span>Knight</span></div>
+            </div>
+        </div>
+    </div>
+    <script src="stylechess.js"></script>
+</body>
+</html>
